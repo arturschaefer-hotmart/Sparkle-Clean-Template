@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<template
+        format="5"
+        revision="6"
+        name="MVVM Clean Arch"
+        minApi="9"
+        minBuildApi="14"
+        description="Creates a new empty activity that uses MVVM Pattern">
+
+    <category value="Other"/>
+    <formfactor value="Mobile"/>
+
+    <parameter
+            id="modelName"
+            name="Model Name"
+            type="string"
+            constraints="class|nonempty"
+            default="Main"
+            help="The name of the model for this feature"/>
+
+    <parameter
+            id="interactorName"
+            name="UseCase Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="GetMain"
+            help="The name of the UseCase for repo and model"/>
+
+    <parameter
+            id="entityName"
+            name="Entity Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="MainEntity"
+            help="The name of the UseCase for repo and model"/>
+
+    <parameter
+            id="repositoryName"
+            name="Repository Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="MainRepository"
+            help="The name of the interface repository"/>
+
+    <parameter
+            id="fragmentName"
+            name="Fragment Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="MainFragment"
+            help="The name of the fragment class to create"/>
+
+    <parameter
+            id="generateLayout"
+            name="Generate Layout File"
+            type="boolean"
+            default="true"
+            help="If true, a layout file will be generated"/>
+
+    <parameter
+            id="layoutName"
+            name="Layout Name"
+            type="string"
+            constraints="layout|unique|nonempty"
+            default="fragment_main"
+            visibility="generateLayout"
+            help="The name of the layout to create for the activity"/>
+
+    <parameter
+            id="viewModelName"
+            name="ViewModel Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="MainViewModel"
+            help="The name of the viewmodel for this feature"/>
+
+    <parameter
+            id="moduleName"
+            name="Dependency Module Name"
+            type="string"
+            constraints="class|nonempty"
+            default="Main"
+            help="The name of the dependecy injection module for this feature"/>
+
+    <parameter
+            id="packageName"
+            name="Package name"
+            type="string"
+            constraints="package"
+            default="com.mycompany.myapp"/>
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_MVVM_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl"/>
+    <execute file="recipe.xml.ftl"/>
+
+</template>
