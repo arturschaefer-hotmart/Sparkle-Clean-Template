@@ -1,11 +1,11 @@
-package ${packageName}.ui
+package ${packageName}.presenter
 
 import android.os.Bundle
 import android.view.View
 
 import androidx.fragment.app.Fragment
 
-class ${fragmentName} : Fragment() {
+class ${featureFragmentClass} : Fragment() {
 
     // TODO: Implement by lazy ViewModel
 

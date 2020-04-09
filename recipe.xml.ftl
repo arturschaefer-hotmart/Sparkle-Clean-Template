@@ -7,35 +7,33 @@
         <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml"/>
     </#if>
 
-    <instantiate from="root/src/main/java/domain/repository/SimpleRepository.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/domain/repository/${repositoryName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/domain/repository/SimpleRepository.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/domain/repository/${featureRepositoryClass}.kt"/>
 
-    <instantiate from="root/src/main/java/domain/model/Simple.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/domain/model/${modelName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/domain/model/Simple.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/domain/model/${featureModelClass}.kt"/>
 
-    <instantiate from="root/src/main/java/domain/interactor/GetSimple.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/domain/interactor/${interactorName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/domain/usecase/GetSimpleUseCase.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/domain/usecase/${featureUseCaseClass}.kt"/>
 
-    <instantiate from="root/src/main/java/data/entity/SimpleEntity.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/data/entity/${entityName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/data/entity/SimpleEntity.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/data/entity/${featureEntityClass}.kt"/>
 
-    <instantiate from="root/src/main/java/data/repository/SimpleRepositoryImpl.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/data/repository/${repositoryImpl}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/data/repository/SimpleRepository.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/data/repository/${featureRepositoryClass}.kt"/>
 
-    <instantiate from="root/src/main/java/ui/SimpleFragment.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/ui/${fragmentName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/data/mapper/SimpleEntityMapper.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/data/mapper/${featureMapperToDomainClass}.kt"/>
 
-    <instantiate from="root/src/main/java/ui/SimpleViewModel.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/ui/${viewModelName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/data/mapper/SimpleModelMapper.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/data/mapper/${featureMapperToDataClass}.kt"/>
 
-    <instantiate from="root/src/main/java/di/SimpleModule.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/di/${moduleName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/presenter/SimpleFragment.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/presenter/${featureFragmentClass}.kt"/>
 
-    <open file="${escapeXmlAttribute(srcOut)}/domain/repository/${repositoryName}.${ktOrJavaExt}"/>
-    <open file="${escapeXmlAttribute(srcOut)}/domain/interactor/${interactorName}.${ktOrJavaExt}"/>
-    <open file="${escapeXmlAttribute(srcOut)}/data/entity/${entityName}.${ktOrJavaExt}"/>
-    <open file="${escapeXmlAttribute(srcOut)}/data/repository/${repositoryImpl}.${ktOrJavaExt}"/>
-    <open file="${escapeXmlAttribute(srcOut)}/ui/${fragmentName}.${ktOrJavaExt}"/>
-    <open file="${escapeXmlAttribute(srcOut)}/ui/${viewModelName}.${ktOrJavaExt}"/>
-    <open file="${escapeXmlAttribute(srcOut)}/di/${moduleName}.${ktOrJavaExt}"/>
+    <instantiate from="root/src/main/java/presenter/SimpleViewModel.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/presenter/${featureViewModelClass}.kt"/>
+
+    <instantiate from="root/src/main/java/di/SimpleModule.kt.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/di/${featureModuleClass}.kt"/>
 </recipe>
